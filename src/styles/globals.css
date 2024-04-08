@@ -1,4 +1,39 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Thin.otf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Light.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Semibold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: degular;
+  src: url("../app/fonts/Degular/Degular/Degular-Bold.otf");
+  font-weight: 700;
+}
+
+/* h1 {
+  font-family: degular;
+  font-weight: 700;
+} */

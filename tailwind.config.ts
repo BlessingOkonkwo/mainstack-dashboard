@@ -18,6 +18,25 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        degular: ["degular", "sans-serif"]
+      },
+      colors: {
+        primary: "#131316",
+        success: {
+          background: "#E3FCF2",
+          foreground: "#0EA163"
+        },
+        pending: "#A77A07",
+        danger: {
+          background: "#F9E3E0",
+          foreground: "#961100"
+        },
+        coolgrey: {
+          background: "#EFF1F6",
+          foreground: "#56616B"
+        }
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
