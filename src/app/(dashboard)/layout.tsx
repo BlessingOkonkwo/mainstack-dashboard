@@ -8,15 +8,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={cn(
-        "bg-accent w-full min-h-screen h-full flex flex-col items-center"
+        "bg-accent w-full min-h-screen h-full p-3 flex flex-col items-center"
       )}
     >
       <Topbar />
 
-      <div>
-        <main>{children}</main>
+      <div className="relative w-full">
+        <main className="mt-[64px] w-full">{children}</main>
 
-        <div>
+        <div className="fixed top-[310px] left[16px]">
           <Sidebar />
         </div>
       </div>

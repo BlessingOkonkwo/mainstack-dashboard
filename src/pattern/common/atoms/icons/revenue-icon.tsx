@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IconProps } from "@/lib/types";
+import { usePathname } from "next/navigation";
 
-const RevenueIcon = ({ color, width, height, ...props }: IconProps) => {
+const RevenueIcon = ({ color: iconColor, width, height, ...props }: IconProps) => {
+  const [color, setColor] = useState<string>("#56616b");
+
+  const href = "/revenue";
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname?.startsWith(href) && !iconColor) {
+      setColor("white");
+    } else if (!pathname?.startsWith(href) && !iconColor) {
+      setColor("#56616b");
+    }
+  }, [iconColor, pathname]);
+
+  useEffect(() => {
+    if (iconColor) {
+      setColor(iconColor);
+    }
+  }, [iconColor, pathname]);
   return (
     <svg
       width={width ?? "18"}

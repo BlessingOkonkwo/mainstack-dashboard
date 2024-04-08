@@ -37,3 +37,16 @@
   font-family: degular;
   font-weight: 700;
 } */
+
+.bgimage1 {
+  background-image: url("../pattern/common/atoms/icons/ProductIconsOne.svg");
+}
+.bgimage2 {
+  background-image: url("../pattern/common/atoms/icons/ProductIconsTwo.svg");
+}
+.bgimage3 {
+  background-image: url("../pattern/common/atoms/icons/ProductIconsThree.svg");
+}
+.bgimage4 {
+  background-image: url("../pattern/common/atoms/icons/ProductIconsFour.svg");
+}
