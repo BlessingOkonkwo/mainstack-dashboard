@@ -13,8 +13,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     >
       <Topbar />
 
-      <div className="relative w-full">
-        <main className="mt-[64px] w-full">{children}</main>
+      <div className="relative w-full h-screen">
+        <main className="mt-[100px] px-[80px] w-full">{children}</main>
 
         <div className="fixed top-[310px] left[16px]">
           <Sidebar />

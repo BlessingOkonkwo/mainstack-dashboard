@@ -1,10 +1,13 @@
 "use client";
+import RevenueTemplate from "@/pattern/revenue/templates/revenue-template";
 
 export default function Home() {
   return (
     <>
       <div>
-        Revenue Page
+        {/* <RevenueSummary />
+        <RevenueChart /> */}
+        <RevenueTemplate />
       </div>
     </>
   );
