@@ -2,8 +2,12 @@
 import React from "react";
 import { ApexOptions } from "apexcharts";
 import numbro from "numbro";
-import Chart from "react-apexcharts";
+// import Chart from "react-apexcharts";
 import { useGetTransactionsQuery } from "@/redux/services/get-transactions.api-slice";
+
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export const OVERVIEW_CHART_LEGEND = [{ label: "Deposit", color: "#CBD5E1" }];
 
