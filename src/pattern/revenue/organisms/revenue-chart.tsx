@@ -219,13 +219,15 @@ const RevenueChart = () => {
 
   return (
     <div className="h-fit w-full max-w-[1200p]">
-      <Chart
-        options={options}
-        series={series}
-        type="line"
-        width="700"
-        height="257"
-      />
+      {typeof window !== "undefined" && (
+        <Chart
+          options={options}
+          series={series}
+          type="line"
+          width="700"
+          height="257"
+        />
+      )}
     </div>
   );
 };
