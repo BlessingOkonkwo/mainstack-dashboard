@@ -1,5 +1,3 @@
-import numbro from "numbro";
-import { IFormatCurrencyProps } from "../types";
 
 /**
  * @description Formats currency amount

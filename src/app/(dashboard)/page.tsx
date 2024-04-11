@@ -11,26 +11,6 @@ import axios from "axios";
 
 export default function Home() {
   const [date, setDate] = useState<Date | undefined>(new Date());
-  const {
-    data: walletData,
-    isLoading,
-    isSuccess,
-    isError,
-  } = useGetWalletQuery();
-  const { data: userData } = useGetUserQuery();
-  const { data: transactionsData } = useGetTransactionsQuery();
-
-  const getCustomersData = () => {
-    axios
-      .get("https://fe-task-api.mainstack.io/user")
-      .then((data: any) => console.log("axios: ", data.data))
-      .catch((error: any) => console.log(error));
-  };
-  getCustomersData();
-
-  console.log("wallet data: ", walletData);
-  console.log("user data: ", userData);
-  console.log("transactions data: ", transactionsData);
 
   return (
     <>
