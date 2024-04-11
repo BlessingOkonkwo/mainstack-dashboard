@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import RevenueTemplate from "@/pattern/revenue/templates/revenue-template";
 

@@ -21,7 +21,7 @@ export interface IUser {
 
 export const usersApiSlice = baseApiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getUser: builder.query<IUser, void>({
+    getUser: builder.query<any, void>({
       query: () => ({
         url: `user`,
         method: "GET",
