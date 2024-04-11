@@ -21,10 +21,10 @@ const NavbarActions = () => {
 
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <Button className="flex items-center justify-between gap-2 py-1 pr-3 pl-[5px] w-[81px] rounded-[100px] bg-coolgrey-background">
+          <span className="flex items-center justify-between gap-2 py-1 pr-3 pl-[5px] w-[81px] rounded-[100px] bg-coolgrey-background">
             <ProfileInitials initials="OJ" />
             <MenuIcon />
-          </Button>
+          </span>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>

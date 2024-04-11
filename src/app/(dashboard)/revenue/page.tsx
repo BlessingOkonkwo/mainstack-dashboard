@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import RevenueTemplate from "@/pattern/revenue/templates/revenue-template";
 
 const RevenuePage = () => {
   return (
-    <div className='text-red-500'>
-      Revenue Page
+    <div className="">
+      <RevenueTemplate />
     </div>
-  )
-}
+  );
+};
 
-export default RevenuePage
+export default RevenuePage;

@@ -3,10 +3,14 @@ import React from "react";
 import { ApexOptions } from "apexcharts";
 import numbro from "numbro";
 import Chart from "react-apexcharts";
+import { useGetTransactionsQuery } from "@/redux/services/get-transactions.api-slice";
 
 export const OVERVIEW_CHART_LEGEND = [{ label: "Deposit", color: "#CBD5E1" }];
 
 const RevenueChart = () => {
+  const { data, isLoading, isSuccess, isFetching, isError } =
+    useGetTransactionsQuery();
+
   const options: ApexOptions = {
     chart: {
       height: 350,
@@ -16,17 +20,17 @@ const RevenueChart = () => {
         show: true,
       },
     },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: 32,
-        dataLabels: {
-          total: {
-            enabled: false,
-          },
-        },
-      },
-    },
+    // plotOptions: {
+    //   bar: {
+    //     horizontal: false,
+    //     columnWidth: 32,
+    //     dataLabels: {
+    //       total: {
+    //         enabled: false,
+    //       },
+    //     },
+    //   },
+    // },
     grid: {
       show: false,
       borderColor: "#E2E8F0",
@@ -187,18 +191,18 @@ const RevenueChart = () => {
         enabled: false,
       },
     },
-    // tooltip: {
-    // //   shared: false,
-    // //   intersect: true,
-    // //   x: {
-    // //     show: false,
-    // //   },
-    // },
     tooltip: {
-        style: {
-          fontFamily: "inherit",
-        },
+      shared: false,
+      intersect: true,
+      x: {
+        show: false,
       },
+    },
+    // tooltip: {
+    //     style: {
+    //       fontFamily: "inherit",
+    //     },
+    //   },
     legend: {
       show: false,
       horizontalAlign: "left",
@@ -209,7 +213,7 @@ const RevenueChart = () => {
   const series = [
     {
       name: "Deposit",
-      data: [160, 250, 500, 200, 400, 450, 150,],
+      data: [160, 250, 500, 200, 400, 450, 150],
     },
   ];
 

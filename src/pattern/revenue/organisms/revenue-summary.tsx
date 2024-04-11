@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardAmountDisplay from "../molecules/dashboard-amount-display";
+import { useGetWalletQuery } from "@/redux/services/get-wallet.api-slice";
 
 const summary: {
   title: string;
@@ -24,15 +25,26 @@ const summary: {
 ];
 
 const RevenueSummary = () => {
+  const { data, isLoading, isSuccess, isFetching, isError } =
+    useGetWalletQuery();
   return (
     <div className="space-y-8">
-      {summary.map((revenue, idx) => (
-        <DashboardAmountDisplay
-          key={idx}
-          title={revenue.title}
-          amount={revenue.amount}
-        />
-      ))}
+      <DashboardAmountDisplay
+        title={"Ledger Balance"}
+        amount={isLoading ? 0 : data?.ledger_balance}
+      />
+      <DashboardAmountDisplay
+        title={"Total Payout"}
+        amount={isLoading ? 0 : data?.total_payout}
+      />
+      <DashboardAmountDisplay
+        title={"Total Revenue"}
+        amount={isLoading ? 0 : data?.total_revenue}
+      />
+      <DashboardAmountDisplay
+        title={"Pending Payout"}
+        amount={isLoading ? 0 : data?.pending_payout}
+      />
     </div>
   );
 };

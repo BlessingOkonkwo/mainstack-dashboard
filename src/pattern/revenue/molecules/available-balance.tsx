@@ -3,7 +3,7 @@ import { formatAmount } from "@/lib/helpers/format-amount";
 import React from "react";
 
 interface IProps {
-  availableBalance: number;
+  availableBalance: number | any;
 }
 const AvailableBalance = ({ availableBalance }: IProps) => {
   return (
@@ -19,7 +19,8 @@ const AvailableBalance = ({ availableBalance }: IProps) => {
 
       <Button
         onClick={() => {}}
-        className="bg-primary text-white text-base font-semibold h-[52px] py-[14px] px-[60px] rounded-[100px]"
+        className="!w-[167px]"
+        size="lg"
       >
         Withdraw
       </Button>

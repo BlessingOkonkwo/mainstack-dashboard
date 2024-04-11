@@ -6,11 +6,11 @@ interface IProps {
 
 const TotalTransactionsNumber = ({ transactionsNumber }: IProps) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-">
       <p className="text-2xl font-bold text-primary">
         {transactionsNumber} Transactions
       </p>
-      <p className="texxt-sm font-medium text-coolgrey-foreground"></p>
+      <p className="texxt-sm font-medium text-coolgrey-foreground">Your transactions for the last 7 days</p>
     </div>
   );
 };

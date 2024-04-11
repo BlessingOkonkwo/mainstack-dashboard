@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={cn(
-        "bg-accent w-full min-h-screen h-full p-3 flex flex-col items-center"
+        "bg-accent w-full min-h-screen h-full p-3 pt-0 flex flex-col items-center"
       )}
     >
       <Topbar />

@@ -42,7 +42,7 @@ const navigation: {
 
 const Topbar = () => {
   return (
-    <div className="flex items-center justify-between fixed h-[64px] w-full px-4 z-30 rounded-[100px] bg-white shadow-[0px_2px_4px_0px_#2D3B430D] ">
+    <div className="flex items-center justify-between fixed h-[64px] w-full px-4 z-30 mx-4 rounded-[100px] bg-white shadow-[0px_2px_4px_0px_#2D3B430D] ">
       <div>
         <MainstackLogo />
       </div>
