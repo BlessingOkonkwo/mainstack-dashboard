@@ -7,6 +7,7 @@ import PeopleIcon from "../atoms/icons/people-icon";
 import AppsIcon from "../atoms/icons/apps-icon";
 import Navlink from "../molecules/navlink";
 import NavbarActions from "../organisms/navbar-actions";
+import AppsActions from "@/pattern/revenue/organisms/apps-actions";
 
 const navigation: {
   name: string;
@@ -33,11 +34,6 @@ const navigation: {
     href: "/crm",
     icon: <PeopleIcon />,
   },
-  {
-    name: "Apps",
-    href: "/apps",
-    icon: <AppsIcon />,
-  },
 ];
 
 const Topbar = () => {
@@ -57,14 +53,12 @@ const Topbar = () => {
             icon={nav.icon}
           />
         ))}
+        <AppsActions />
       </div>
 
       <div>
         <NavbarActions />
       </div>
-      {/* box-shadow: 0px 2px 4px 0px #2D3B430D;
-
-box-shadow: 0px 2px 6px 0px #2D3B430F; */}
 
     </div>
   );

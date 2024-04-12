@@ -31,18 +31,22 @@ const RevenueSummary = () => {
     <div className="space-y-8">
       <DashboardAmountDisplay
         title={"Ledger Balance"}
+        loading={isLoading}
         amount={isLoading ? 0 : data?.ledger_balance}
       />
       <DashboardAmountDisplay
         title={"Total Payout"}
+        loading={isLoading}
         amount={isLoading ? 0 : data?.total_payout}
       />
       <DashboardAmountDisplay
         title={"Total Revenue"}
+        loading={isLoading}
         amount={isLoading ? 0 : data?.total_revenue}
       />
       <DashboardAmountDisplay
         title={"Pending Payout"}
+        loading={isLoading}
         amount={isLoading ? 0 : data?.pending_payout}
       />
     </div>

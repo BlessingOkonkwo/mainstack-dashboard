@@ -16,7 +16,7 @@ import {
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
 export default function TransactionTypeFilter() {
-  const [showStoreTransactions, setShowStoreTransactions] = React.useState<Checked>(true);
+  const [showStoreTransactions, setShowStoreTransactions] = React.useState<Checked>(false);
   const [showGetTipped, setShowGetTipped] = React.useState<Checked>(false);
   const [showWithdrawals, setShowWithdrawals] = React.useState<Checked>(false);
   const [showChargebacks, setShowChargebacks] = React.useState<Checked>(false);

@@ -3,6 +3,7 @@ import TransactionsTop from "./transactions-top";
 import TransactionsTableRow from "../molecules/transactions-table-row";
 import { Separator } from "@/components/ui/separator";
 import { useGetTransactionsQuery } from "@/redux/services/get-transactions.api-slice";
+import PulsePlaceholder from "@/pattern/common/atoms/icons/pulse-placeholder-icon";
 
 const transactions = [
   {
@@ -59,15 +60,24 @@ const TransactionsTable = () => {
       </div>
       <Separator />
       <div className="space-y-[24px]">
-        {data?.map((transaction, idx) => (
-          <TransactionsTableRow
-            key={idx}
-            amount={isLoading ? 0 : transaction?.amount}
-            date={transaction.date}
-            status={transaction.status}
-            desc={transaction.type}
-          />
-        ))}
+        {!isLoading &&
+          !isError &&
+          isSuccess &&
+          data?.map((transaction, idx) => (
+            <TransactionsTableRow
+              key={idx}
+              amount={isLoading ? 0 : transaction?.amount}
+              date={transaction.date}
+              status={transaction.status}
+              desc={transaction.type}
+            />
+          ))}
+
+        {isLoading && (
+          <div className="h-[300px] flex flex-col items-center justify-center">
+            <PulsePlaceholder />
+          </div>
+        )}
       </div>
     </div>
   );

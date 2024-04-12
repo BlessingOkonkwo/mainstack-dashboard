@@ -45,3 +45,9 @@
 .bgimage4 {
   background-image: url("../pattern/common/atoms/icons/ProductIconsFour.svg");
 }
+
+.stroke-custom {
+  path {
+    stroke-width: '1px' !important;
+  }
+}

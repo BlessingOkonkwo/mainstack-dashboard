@@ -8,7 +8,10 @@ const ChartSection = () => {
     useGetWalletQuery();
   return (
     <div className="space-y-8">
-      <AvailableBalance availableBalance={isLoading ? 0 : data?.balance} />
+      <AvailableBalance
+        availableBalance={isLoading ? 0 : data?.balance}
+        loading={isLoading}
+      />
       <RevenueChart />
     </div>
   );

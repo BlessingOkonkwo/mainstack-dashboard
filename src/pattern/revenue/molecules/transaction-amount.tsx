@@ -1,5 +1,6 @@
 import React from "react";
 import { formatAmount } from "@/lib/helpers/format-amount";
+import { formatDate } from "@/lib/helpers/format-date";
 
 interface IProps {
   amount: number;
@@ -12,7 +13,9 @@ const TransactionAmount = ({ amount, date }: IProps) => {
       <p className="text-base text-primary font-bold">
         {formatAmount({ amount })}
       </p>
-      <p className="text-sm font-medium text-coolgrey-foreground">{date}</p>
+      <p className="text-sm font-medium text-coolgrey-foreground">
+        {formatDate({ inputDate: date })}
+      </p>
     </div>
   );
 };
