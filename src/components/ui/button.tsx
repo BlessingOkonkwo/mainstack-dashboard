@@ -21,7 +21,7 @@ const buttonVariants = cva(
         grey: "bg-coolgrey-background text-primary"
       },
       size: {
-        default: "h-[48px] px-[24px] py-[12px] !w-[198px]",
+        default: "h-[48px] px-[24px] py-[12px]",
         sm: "h-9 rounded-md px-3",
         lg: "h-[52px] px-[28px] py-[14px]",
         icon: "h-10 w-10",

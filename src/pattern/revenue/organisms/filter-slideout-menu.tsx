@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
+  SheetTrigger,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { create, show, useModal } from "@ebay/nice-modal-react";
 import { Separator } from "@/components/ui/separator";
 import TransactionTypeFilter from "@/pattern/common/molecules/filter/transaction-type-filter";
@@ -81,60 +82,63 @@ const FilterSlideOutMenu = create(() => {
   }, []);
 
   return (
-    <Sheet modal open={visible} onOpenChange={handleCloseModal}>
+    <Sheet open={visible} onOpenChange={handleCloseModal}>
+      <SheetTrigger asChild>
+        <Button variant="outline">Open</Button>
+      </SheetTrigger>
       <SheetContent>
-        <div className="relative h-full">
-          <ScrollArea
-            className="w-full rounded-sm"
-            style={{ height: `${scrollHeight}px` }}
-          >
-            <SheetHeader className="absolute top-0 right-0 left-0 z-10 bg-white">
-              <SheetTitle>Filter</SheetTitle>
-            </SheetHeader>
+        <ScrollArea
+          className="w-full h-full pr-3"
+          // style={{ height: `${scrollHeight}px` }}
+        >
+          {/* <div className="relative h-full"> */}
+          <SheetHeader className="absolute top-0 right-0 left-0 z-10 bg-white">
+            <SheetTitle>Filter</SheetTitle>
+          </SheetHeader>
 
-            {/* Content */}
-            <div className="space-y-[24px] w-full mt-[72px]">
-              <div className="w-full space-y-[12px]">
-                <div className="w-full max-w-full flex items-center gap-3 flex-nowrap">
-                  {rolesFilterSetting.map(({ value, label }) => (
-                    <FilterToggle key={value} label={label} value={value} />
-                  ))}
-                </div>
+          {/* Content */}
+          <div className="space-y-[24px] w-full mt-[40px]">
+            <ScrollArea className="w-[395px] whitespace-nowrap p-3">
+              <div className="w-full max-w-full flex items-center gap-3 flex-nowrap">
+                {rolesFilterSetting.map(({ value, label }) => (
+                  <FilterToggle key={value} label={label} value={value} />
+                ))}
               </div>
-              <Separator />
+              <ScrollBar orientation="horizontal" className="h-1.5" />
+            </ScrollArea>
 
-              {/* Date Range */}
-              <div className="w-full space-y-[12px]">
-                <label htmlFor="" className="block text-base font-semibold">
-                  Date Range
-                </label>
-                <DateInput />
-              </div>
-              <Separator />
-
-              <div className="w-full space-y-[12px]">
-                <label htmlFor="" className="block text-base font-semibold">
-                  Transaction Type
-                </label>
-                <TransactionTypeFilter />
-              </div>
-              <Separator />
-
-              <div className="w-full space-y-[12px]">
-                <label htmlFor="" className="block text-base font-semibold">
-                  Transaction Status
-                </label>
-                <TransactionStatusFilter />
-              </div>
+            {/* Date Range */}
+            <div className="w-full space-y-[12px]">
+              <label htmlFor="" className="block text-base font-semibold">
+                Date Range
+              </label>
+              <DateInput />
             </div>
 
-            {/* Footer */}
-            <div className="w-full mt-[100px] mb-2">
-              <Button variant="outline" onClick={handleSaveFilterSettings}>Clear</Button>
-              <Button onClick={handleSaveFilterSettings}>Apply</Button>
+            <div className="w-full space-y-[12px] relative">
+              <label htmlFor="" className="block text-base font-semibold">
+                Transaction Type
+              </label>
+              <TransactionTypeFilter />
             </div>
-          </ScrollArea>
-        </div>
+
+            <div className="w-full space-y-[12px] !mt-20">
+              <label htmlFor="" className="block text-base font-semibold">
+                Transaction Status
+              </label>
+              <TransactionStatusFilter />
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="w-full mt-[100px] mb-2 flex items-center justify-between gap-3">
+            <Button variant="outline" onClick={handleSaveFilterSettings}>
+              Clear
+            </Button>
+            <Button onClick={handleSaveFilterSettings}>Apply</Button>
+          </div>
+          {/* </div> */}
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );

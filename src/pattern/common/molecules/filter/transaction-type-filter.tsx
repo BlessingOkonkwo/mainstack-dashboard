@@ -16,7 +16,8 @@ import {
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
 export default function TransactionTypeFilter() {
-  const [showStoreTransactions, setShowStoreTransactions] = React.useState<Checked>(false);
+  const [showStoreTransactions, setShowStoreTransactions] =
+    React.useState<Checked>(false);
   const [showGetTipped, setShowGetTipped] = React.useState<Checked>(false);
   const [showWithdrawals, setShowWithdrawals] = React.useState<Checked>(false);
   const [showChargebacks, setShowChargebacks] = React.useState<Checked>(false);
@@ -26,7 +27,13 @@ export default function TransactionTypeFilter() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="grey" className="font-normal rounded-[12px] !justify-start !w-full">Store Transactions, Get Tipped, Withdrawals, Charge Backs, Cash Backs, Refer & Earn</Button>
+        <Button
+          variant="grey"
+          className="font-normal rounded-[12px] !justify-start !w-full max-w-full block overflow-hidden text-ellipsis absolute"
+        >
+          Store Transactions, Get Tipped, Withdrawals, Charge Backs, Cash Backs,
+          Refer & Earn
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>

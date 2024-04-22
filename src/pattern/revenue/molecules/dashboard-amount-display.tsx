@@ -17,13 +17,13 @@ const DashboardAmountDisplay = ({
   return (
     <div className="relative space-y-2 h-[66px] w-[271px]">
       <p className="text-sm font-medium text-coolgrey-foreground">{title}</p>
-      <p className="text-[28px] font-bold text-primary">
-        {loading ? (
-          <Skeleton className="rounded-[100px] h-[35px] w-[200px]" />
-        ) : (
-          formatAmount({ amount })
-        )}
-      </p>
+      {loading ? (
+        <Skeleton className="rounded-[100px] h-[35px] w-[200px]" />
+      ) : (
+        <p className="text-[28px] font-bold text-primary">
+          {formatAmount({ amount })}
+        </p>
+      )}
       <span className="absolute top-0 right-0" onClick={() => {}}>
         <InfoIcon />
       </span>

@@ -19,13 +19,13 @@ export default function DateInput() {
 
   return (
     <div className="flex items-center gap-[6px]">
-      <div>
+      <div className="flex-1">
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant={"grey"}
               className={cn(
-                "w-[203px] justify-between text-left font-normal rounded-[12px]",
+                "w-full justify-between text-left font-normal rounded-[12px]",
                 !startDate && "text-muted-foreground"
               )}
             >
@@ -44,13 +44,13 @@ export default function DateInput() {
         </Popover>
       </div>
 
-      <div>
+      <div className="flex-1">
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant={"grey"}
               className={cn(
-                "w-[203px] justify-between text-left font-normal rounded-[12px]",
+                "w-full justify-between text-left font-normal rounded-[12px]",
                 !endDate && "text-muted-foreground"
               )}
             >
